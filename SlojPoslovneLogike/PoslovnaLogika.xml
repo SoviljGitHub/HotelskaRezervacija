@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Konfiguracija>
+	<!-- Minimalne godine za registraciju gosta -->
+	<MinimalneGodine>18</MinimalneGodine>
+
+	<!-- Ograničenja trajanja boravka -->
+	<MinDanaBoravka>1</MinDanaBoravka>
+	<MaxDanaBoravka>30</MaxDanaBoravka>
+
+	<!-- Popusti po broju dana -->
+	<Popust7>10</Popust7>
+	<Popust15>20</Popust15>
+</Konfiguracija>

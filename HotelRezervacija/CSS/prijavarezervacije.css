@@ -1,0 +1,91 @@
+﻿.rezervacija-wrap {
+    background: #fff;
+    max-width: 470px;
+    margin: 60px auto 0 auto;
+    padding: 34px 32px 26px 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(36, 30, 11, 0.16);
+    text-align: center;
+}
+
+    .rezervacija-wrap h2 {
+        color: #d38742;
+        font-size: 2rem;
+        margin-bottom: 18px;
+        font-weight: 800;
+        letter-spacing: 1.1px;
+    }
+
+.rezervacija-form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    text-align: left;
+}
+
+    .form-group label {
+        margin-bottom: 4px;
+        font-weight: 500;
+        color: #2f2210;
+        font-size: 1em;
+    }
+
+.form-control, .form-select {
+    padding: 8px 13px;
+    border-radius: 7px;
+    border: 1.5px solid #d2b48c;
+    background: #f9f6f3;
+    font-size: 1em;
+    outline: none;
+    transition: border 0.18s;
+    margin-bottom: 2px;
+}
+
+    .form-control:focus, .form-select:focus {
+        border-color: #d38742;
+        background: #fff;
+    }
+
+.rezervisi-btn {
+    padding: 11px 32px;
+    border-radius: 9px;
+    background: #d38742;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    font-size: 1.15em;
+    margin-top: 20px;
+    transition: background 0.2s, transform 0.17s;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(211, 135, 66, 0.08);
+}
+
+    .rezervisi-btn:hover {
+        background: #a85f23;
+        transform: scale(1.04);
+    }
+
+.poruka-label {
+    color: #bb2b2b;
+    margin-bottom: 14px;
+    font-size: 1.05em;
+    font-weight: 600;
+}
+
+@media (max-width: 650px) {
+    .rezervacija-wrap {
+        max-width: 97vw;
+        padding: 18px 2vw 12px 2vw;
+    }
+
+    .rezervacija-form {
+        gap: 12px;
+    }
+}

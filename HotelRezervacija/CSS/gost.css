@@ -1,0 +1,67 @@
+﻿.gost-wrap {
+    background: #fff;
+    max-width: 480px;
+    margin: 60px auto 0 auto;
+    padding: 36px 32px 32px 32px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(80, 58, 20, 0.12);
+    text-align: center;
+}
+
+    .gost-wrap h2 {
+        color: #d38742;
+        font-size: 2rem;
+        margin-bottom: 18px;
+        letter-spacing: 1.1px;
+        font-weight: 800;
+    }
+
+    .gost-wrap .hotel-naziv {
+        color: #b87222;
+        font-weight: 700;
+        letter-spacing: 0.7px;
+    }
+
+.gost-info {
+    font-size: 1.12em;
+    color: #3c3225;
+    margin-bottom: 34px;
+}
+
+.gost-btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.gost-btn {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background: #d38742;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.07em;
+    font-weight: 700;
+    box-shadow: 0 1px 6px rgba(150,100,40,0.09);
+    transition: background 0.22s, transform 0.16s;
+}
+
+    .gost-btn:hover,
+    .gost-btn:focus {
+        background: #a85f23;
+        color: #fff;
+        transform: translateY(-2px) scale(1.04);
+    }
+
+    .gost-btn.secondary {
+        background: #555;
+        color: #fff;
+    }
+
+        .gost-btn.secondary:hover,
+        .gost-btn.secondary:focus {
+            background: #222;
+            color: #fff;
+        }

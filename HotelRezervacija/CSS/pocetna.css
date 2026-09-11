@@ -1,0 +1,79 @@
+﻿.pocetna-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 55px 0 35px 0;
+    min-height: 410px;
+    flex-wrap: wrap;
+}
+
+.pocetna-info {
+    max-width: 440px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(90, 57, 17, 0.12);
+    padding: 40px 30px;
+    text-align: left;
+}
+
+    .pocetna-info h1 {
+        margin-top: 0;
+        font-size: 2.3em;
+        color: #d38742;
+        letter-spacing: 1px;
+    }
+
+.hotel-naziv {
+    color: #b96510;
+    font-weight: bold;
+}
+
+.pocetna-info p {
+    color: #3b2a18;
+    font-size: 1.13em;
+    margin-bottom: 16px;
+}
+
+.ponuda-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 23px 0;
+    color: #633e1c;
+    font-size: 1.04em;
+}
+
+    .ponuda-lista li {
+        margin-bottom: 5px;
+    }
+
+.pocetna-prijava-btn {
+    display: inline-block;
+    background: #d38742;
+    color: #fff;
+    padding: 13px 34px;
+    font-size: 1.11em;
+    font-weight: bold;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: background 0.18s, transform 0.14s;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(211, 135, 66, 0.15);
+}
+
+    .pocetna-prijava-btn:hover,
+    .pocetna-prijava-btn:focus {
+        background: #a85f23;
+        transform: translateY(-2px) scale(1.03);
+        color: #fff;
+    }
+
+.pocetna-img img {
+    width: 340px;
+    max-width: 90vw;
+    border-radius: 20px;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.13);
+    object-fit: cover;
+}
+
+

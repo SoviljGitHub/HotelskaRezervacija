@@ -1,0 +1,49 @@
+﻿.admin-welcome {
+    max-width: 500px;
+    margin: 50px auto;
+    background: rgba(255,255,255,0.92);
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    padding: 36px 28px 30px 28px;
+    text-align: center;
+}
+
+.admin-ime {
+    color: #bb8b35;
+    font-weight: bold;
+}
+
+.admin-btn-grupa {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.admin-btn {
+    background: #d38742;
+    color: #fff;
+    padding: 12px 34px;
+    border-radius: 11px;
+    text-decoration: none;
+    font-size: 1.12em;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+    transition: background 0.23s, transform 0.17s;
+    display: inline-block;
+}
+
+    .admin-btn:hover,
+    .admin-btn:focus {
+        background: #a85f23;
+        color: #fff;
+        transform: scale(1.06);
+    }
+
+.rezervacije-btn {
+    background: #5c83d3;
+}
+
+    .rezervacije-btn:hover {
+        background: #3257aa;
+    }

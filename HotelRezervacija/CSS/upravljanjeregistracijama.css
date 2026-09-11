@@ -1,0 +1,215 @@
+﻿/* UpravljanjeRegistracijama.css */
+
+/* Layout */
+.upravljanje-reg-wrap {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+    .upravljanje-reg-wrap h2 {
+        margin: 0 0 16px;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+/* Filter traka */
+.filteri-grupa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.filter-ddl {
+    min-width: 180px;
+    padding: 8px 12px;
+    border: 1px solid #d0d7de;
+    border-radius: 10px;
+    background: #fff;
+    font-size: .95rem;
+}
+
+/* Dugmad */
+.filter-btn,
+.stampaj-btn {
+    padding: 9px 14px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-size: .95rem;
+    cursor: pointer;
+    transition: transform .05s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.filter-btn {
+    background: #0ea5e9; /* plava */
+    color: #fff;
+}
+
+    .filter-btn:hover {
+        box-shadow: 0 6px 14px rgba(14,165,233,.25);
+    }
+
+    .filter-btn:active {
+        transform: translateY(1px);
+    }
+
+.stampaj-btn {
+    background: #10b981; /* zelena */
+    color: #fff;
+}
+
+    .stampaj-btn:hover {
+        box-shadow: 0 6px 14px rgba(16,185,129,.25);
+    }
+
+    .stampaj-btn:active {
+        transform: translateY(1px);
+    }
+
+/* Dugme "Obriši" u tabeli */
+.btn-delete {
+    padding: 7px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: #ef4444; /* crvena (danger) */
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity .2s ease, box-shadow .2s ease, transform .05s ease;
+}
+
+    .btn-delete:hover {
+        opacity: .9;
+        box-shadow: 0 6px 14px rgba(239,68,68,.25);
+    }
+
+    .btn-delete:active {
+        transform: translateY(1px);
+    }
+
+    .btn-delete:focus-visible {
+        outline: 2px solid #ef4444;
+        outline-offset: 2px;
+    }
+
+    .btn-delete[disabled] {
+        opacity: .6;
+        cursor: not-allowed;
+    }
+
+
+/* Tabela (GridView) */
+.upravljanje-tabela {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: .95rem;
+}
+
+    .upravljanje-tabela thead th {
+        background: #f3f4f6;
+        text-align: left;
+        padding: 12px 14px;
+        font-weight: 700;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .upravljanje-tabela tbody td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #f1f5f9;
+        vertical-align: middle;
+    }
+
+    .upravljanje-tabela tbody tr:hover {
+        background: #f9fafb;
+    }
+
+    /* Delete dugme unutar GridView (ButtonField renderuje <input type="submit">) */
+    .upravljanje-tabela input[type="submit"],
+    .upravljanje-tabela button {
+        padding: 7px 10px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        background: #ef4444; /* crvena */
+        color: #fff;
+        cursor: pointer;
+        transition: opacity .2s ease, transform .05s ease;
+    }
+
+        .upravljanje-tabela input[type="submit"]:hover,
+        .upravljanje-tabela button:hover {
+            opacity: .9;
+        }
+
+        .upravljanje-tabela input[type="submit"]:active,
+        .upravljanje-tabela button:active {
+            transform: translateY(1px);
+        }
+
+/* Responsivnost */
+@media (max-width: 768px) {
+    .filter-ddl {
+        min-width: 140px;
+    }
+
+    .upravljanje-tabela thead {
+        display: none;
+    }
+
+    .upravljanje-tabela,
+    .upravljanje-tabela tbody,
+    .upravljanje-tabela tr,
+    .upravljanje-tabela td {
+        display: block;
+        width: 100%;
+    }
+
+        .upravljanje-tabela tr {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .upravljanje-tabela td {
+            padding: 10px 14px;
+        }
+
+            .upravljanje-tabela td::before {
+                content: attr(data-label);
+                display: block;
+                font-weight: 700;
+                margin-bottom: 4px;
+                color: #6b7280;
+            }
+}
+
+/* Štampa */
+@media print {
+    .filteri-grupa,
+    .stampaj-btn,
+    .filter-btn,
+    nav, header, footer {
+        display: none !important;
+    }
+
+    .upravljanje-reg-wrap {
+        box-shadow: none;
+        padding: 0;
+        border: none;
+    }
+
+    .upravljanje-tabela {
+        border: 1px solid #000;
+        font-size: 12px;
+    }
+
+        .upravljanje-tabela thead th,
+        .upravljanje-tabela tbody td {
+            border-bottom: 1px solid #000;
+        }
+}

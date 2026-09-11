@@ -1,0 +1,56 @@
+﻿.gost-uspesno-wrap {
+    background: #fff;
+    max-width: 470px;
+    margin: 60px auto 0 auto;
+    padding: 38px 34px 30px 34px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(36, 30, 11, 0.14);
+    text-align: center;
+}
+
+    .gost-uspesno-wrap h2 {
+        color: #d38742;
+        font-size: 2rem;
+        margin-bottom: 14px;
+        letter-spacing: 1px;
+        font-weight: 800;
+    }
+
+.gost-imejl {
+    color: #245282;
+    font-weight: 600;
+    font-size: 1.12em;
+}
+
+.gost-btn-grupa {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 32px;
+}
+
+.gost-btn {
+    padding: 12px 34px;
+    border-radius: 10px;
+    background: #d38742;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    font-size: 1.13em;
+    transition: background 0.19s, transform 0.15s;
+    cursor: pointer;
+    letter-spacing: 0.7px;
+}
+
+    .gost-btn:hover {
+        background: #a85f23;
+        transform: scale(1.05);
+    }
+
+.pregled-btn {
+    background: #3e94c7;
+}
+
+    .pregled-btn:hover {
+        background: #256082;
+    }

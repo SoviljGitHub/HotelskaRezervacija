@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_SlojPodataka", "1_SlojPodataka", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2_SlojPoslovneLogike", "2_SlojPoslovneLogike", "{65BF38C6-C7F8-49FD-AFD3-DB0C3AF14C54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3_PrezentaciniSloj", "3_PrezentaciniSloj", "{2B96AC44-CBAF-49BD-A177-276C2765B03C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KorisnickiInterfejs", "KorisnickiInterfejs", "{61CAB4AA-C06A-4CED-B5AE-031A42CD5185}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PrezentacionaLogika", "PrezentacionaLogika", "{ACDFB39F-74C8-4031-ABA3-0A4B96F3174A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelRezervacija", "HotelRezervacija\HotelRezervacija.csproj", "{B4598B86-A2FD-4016-A452-70DE3C9D81AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlojPodataka", "SlojPodataka\SlojPodataka.csproj", "{8D970236-4246-4011-BAC7-FA1D39A1F8C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlojPoslovneLogike", "SlojPoslovneLogike\SlojPoslovneLogike.csproj", "{C6366A46-17CA-465B-A842-571EE184B3EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrezentacionaLogika", "PrezentacionaLogika\PrezentacionaLogika.csproj", "{9197007D-8B31-447D-9BED-0BD70810AF25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4598B86-A2FD-4016-A452-70DE3C9D81AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4598B86-A2FD-4016-A452-70DE3C9D81AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4598B86-A2FD-4016-A452-70DE3C9D81AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4598B86-A2FD-4016-A452-70DE3C9D81AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D970236-4246-4011-BAC7-FA1D39A1F8C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D970236-4246-4011-BAC7-FA1D39A1F8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D970236-4246-4011-BAC7-FA1D39A1F8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D970236-4246-4011-BAC7-FA1D39A1F8C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6366A46-17CA-465B-A842-571EE184B3EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6366A46-17CA-465B-A842-571EE184B3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6366A46-17CA-465B-A842-571EE184B3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6366A46-17CA-465B-A842-571EE184B3EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9197007D-8B31-447D-9BED-0BD70810AF25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9197007D-8B31-447D-9BED-0BD70810AF25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9197007D-8B31-447D-9BED-0BD70810AF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9197007D-8B31-447D-9BED-0BD70810AF25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61CAB4AA-C06A-4CED-B5AE-031A42CD5185} = {2B96AC44-CBAF-49BD-A177-276C2765B03C}
+		{ACDFB39F-74C8-4031-ABA3-0A4B96F3174A} = {2B96AC44-CBAF-49BD-A177-276C2765B03C}
+		{B4598B86-A2FD-4016-A452-70DE3C9D81AA} = {61CAB4AA-C06A-4CED-B5AE-031A42CD5185}
+		{8D970236-4246-4011-BAC7-FA1D39A1F8C7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{C6366A46-17CA-465B-A842-571EE184B3EF} = {65BF38C6-C7F8-49FD-AFD3-DB0C3AF14C54}
+		{9197007D-8B31-447D-9BED-0BD70810AF25} = {ACDFB39F-74C8-4031-ABA3-0A4B96F3174A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D1C5B98-0DBB-4527-8BE1-2937487895B3}
+	EndGlobalSection
+EndGlobal

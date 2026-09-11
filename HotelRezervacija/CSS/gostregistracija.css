@@ -1,0 +1,117 @@
+﻿.registracija-wrap {
+    background: #fff;
+    max-width: 410px;
+    margin: 55px auto 0 auto;
+    padding: 32px 28px 22px 28px;
+    border-radius: 18px;
+    box-shadow: 0 4px 16px rgba(36, 30, 11, 0.15);
+    text-align: center;
+    border: 1.8px solid #f3e4c5;
+    position: relative;
+    animation: fadeIn 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.registracija-wrap h2 {
+    color: #d38742;
+    font-size: 1.55rem;
+    margin-bottom: 18px;
+    letter-spacing: 1.1px;
+    font-weight: 800;
+}
+
+.forma-registracija {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    align-items: stretch;
+    margin-top: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 7px;
+}
+
+    .form-group label {
+        color: #a85f23;
+        font-weight: 600;
+        margin-bottom: 4px;
+        font-size: 0.98em;
+        letter-spacing: 0.5px;
+    }
+
+.form-control {
+    padding: 7px 10px;
+    border-radius: 7px;
+    border: 1.2px solid #d2b48c;
+    background: #fcfaf6;
+    font-size: 0.98em;
+    outline: none;
+    transition: border 0.22s, background 0.21s;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .form-control:focus {
+        border-color: #d38742;
+        background: #fff;
+    }
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.reg-btn {
+    padding: 10px 0;
+    width: 180px;
+    border-radius: 9px;
+    background: linear-gradient(92deg, #d38742 60%, #f7b96c 100%);
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    font-size: 1.13em;
+    transition: background 0.22s, transform 0.18s, box-shadow 0.16s;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(211, 135, 66, 0.12);
+    letter-spacing: 0.4px;
+}
+
+    .reg-btn:hover {
+        background: linear-gradient(92deg, #a85f23 60%, #d38742 100%);
+        transform: translateY(-1px) scale(1.03);
+        box-shadow: 0 4px 16px rgba(211, 135, 66, 0.22);
+    }
+
+.poruka-label {
+    display: block;
+    color: #bb2b2b;
+    background: #ffeaea;
+    border: 1px solid #eea5a5;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 7px 12px;
+    font-size: 1.03em;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    box-shadow: 0 2px 7px rgba(211, 66, 66, 0.06);
+    text-align: center;
+}
+

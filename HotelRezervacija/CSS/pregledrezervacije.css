@@ -1,0 +1,78 @@
+﻿.pregled-rezervacija-wrap {
+    background: #fcfaf8;
+    max-width: 850px;
+    margin: 48px auto 0 auto;
+    padding: 32px 24px 24px 24px;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(36, 30, 11, 0.12);
+    text-align: center;
+}
+
+    .pregled-rezervacija-wrap h2 {
+        color: #d38742;
+        font-size: 2.1rem;
+        margin-bottom: 26px;
+        font-weight: 800;
+        letter-spacing: 1.1px;
+    }
+/* GridView tabela */
+.rezervacije-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.09em;
+    margin-top: 12px;
+    background: #fff;
+    border-radius: 11px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(211, 135, 66, 0.08);
+}
+    /* Header */
+    .rezervacije-tabela th {
+        background: #f2e4cf;
+        color: #a85f23;
+        font-weight: bold;
+        padding: 13px 6px;
+        font-size: 1.06em;
+        border-bottom: 2px solid #d38742;
+    }
+    /* Redovi */
+    .rezervacije-tabela td {
+        padding: 11px 6px;
+        border-bottom: 1px solid #ebebeb;
+        color: #444;
+        font-size: 1em;
+        background: #fff;
+    }
+    /* Alternating rows */
+    .rezervacije-tabela tr:nth-child(even) td {
+        background: #f9f6f2;
+    }
+    /* Hover efekat */
+    .rezervacije-tabela tr:hover td {
+        background: #ffe4c2;
+        transition: background 0.18s;
+    }
+
+.print-btn-container {
+    text-align: right;
+    margin-top: 18px;
+}
+
+.print-btn {
+    padding: 10px 26px;
+    background: #3e94c7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.14s;
+    box-shadow: 0 2px 8px rgba(62, 148, 199, 0.10);
+    letter-spacing: 0.5px;
+}
+
+    .print-btn:hover {
+        background: #256082;
+        transform: scale(1.04);
+    }

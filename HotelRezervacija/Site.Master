@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="HotelRezervacija.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Luxury Hotel</title>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <link rel="stylesheet" href="CSS/stilovi.css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <form runat="server">  
+
+        <!-- HEADER (navigacija) -->
+        <div class="navigacija">
+            <a href="Default.aspx" class="logo">
+                <img src="Slike/logo.png" alt="Luxury Hotel Logo" />
+            </a>
+            <div class="meni-centar">
+                <a href="Default.aspx" class="nav-btn">
+                    <img src="Slike/pocetna.png" alt="Početna" /> Početna
+                </a>
+                <a href="GostRegistracijaPrijava.aspx" class="nav-btn">
+                    <img src="Slike/gost.png" alt="Gost" /> Gost
+                </a>
+                <a href="AdminPrijava.aspx" class="nav-btn">
+                    <img src="Slike/admin.png" alt="Admin" /> Admin
+                </a>
+            </div>
+        </div>
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div>
+                <img src="Slike/logo.png" alt="Luxury Hotel Logo" class="footer-logo" />
+                <span class="footer-naziv">Luxury Hotel &copy; <%: DateTime.Now.Year %></span>
+            </div>
+            <div class="footer-info">
+                <span>Adresa: Trg Hotela 1, Beograd</span>
+                <span>|</span>
+                <span>Telefon: 011/123-4567</span>
+                <span>|</span>
+                <span>Email: info@luxuryhotel.rs</span>
+            </div>
+        </footer>
+
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>

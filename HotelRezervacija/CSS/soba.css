@@ -1,0 +1,208 @@
+﻿body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: #f3f3f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* ====== OMOTAČ ====== */
+.soba-wrap {
+    background: #fff;
+    max-width: 980px;
+    margin: 45px auto 40px auto;
+    border-radius: 20px;
+    box-shadow: 0 6px 38px rgba(31, 31, 31, 0.15), 0 1.5px 6px #d3a0691b;
+    padding: 36px 34px 32px 34px;
+}
+
+    .soba-wrap h2 {
+        margin-top: 0;
+        margin-bottom: 28px;
+        color: #d38742;
+        font-size: 2.1rem;
+        letter-spacing: 1.3px;
+        font-weight: 800;
+        text-align: center;
+        font-family: 'Segoe UI Semibold', 'Inter', Arial, sans-serif;
+    }
+
+/* ====== FORMA ====== */
+.form-flex {
+    display: flex;
+    gap: 44px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.forma {
+    flex: 1;
+    min-width: 260px;
+    max-width: 340px;
+    background: #f9f6f2;
+    border-radius: 16px;
+    padding: 25px 18px 18px 18px;
+    box-shadow: 0 2px 9px rgba(217,165,99,0.09);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 13px;
+}
+
+    .form-group label {
+        margin-bottom: 4px;
+        font-weight: 500;
+        color: #b77a3a;
+        font-size: 1.02em;
+        letter-spacing: 0.2px;
+    }
+
+.form-control {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1.5px solid #d2b48c;
+    background: #fffefa;
+    font-size: 1.06em;
+    outline: none;
+    transition: border 0.21s;
+}
+
+    .form-control:focus {
+        border-color: #d38742;
+        background: #fff;
+    }
+
+/* ====== DUGMAD ====== */
+.btn-row {
+    display: flex;
+    gap: 13px;
+    margin-top: 8px;
+}
+
+.btn {
+    padding: 9px 18px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.22s, transform 0.13s;
+    box-shadow: 0 2px 8px rgba(217,165,99,0.10);
+    outline: none;
+}
+
+    .btn.primary {
+        background: #d38742;
+        color: #fff;
+    }
+
+        .btn.primary:hover {
+            background: #a85f23;
+        }
+
+    .btn.warning {
+        background: #3e94c7;
+        color: #fff;
+    }
+
+        .btn.warning:hover {
+            background: #256082;
+        }
+
+    .btn.secondary {
+        background: #eee2cd;
+        color: #b37a36;
+    }
+
+        .btn.secondary:hover {
+            background: #eed9be;
+            color: #a85f23;
+        }
+
+/* ====== PORUKE ====== */
+.message-label {
+    display: block;
+    margin-top: 12px;
+    font-size: 1em;
+    color: #b52e0e;
+    font-weight: 600;
+    background: #fde3d9;
+    border-radius: 7px;
+    padding: 8px 12px;
+}
+
+/* ====== TABELA ====== */
+.tabela {
+    flex: 2;
+    min-width: 350px;
+    overflow-x: auto;
+}
+
+.sobe-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fdf7ee;
+    margin-top: 6px;
+    font-size: 1.07em;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 7px rgba(31, 31, 31, 0.10);
+}
+
+    .sobe-tabela th, .sobe-tabela td {
+        padding: 13px 14px;
+        text-align: left;
+    }
+
+    .sobe-tabela th {
+        background: #d38742;
+        color: #fff;
+        font-size: 1.08em;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        border-bottom: 2px solid #c6a07e;
+    }
+
+    .sobe-tabela td {
+        color: #463617;
+    }
+
+    .sobe-tabela tr:nth-child(even) {
+        background: #faeee4;
+    }
+
+    .sobe-tabela tr:hover {
+        background: #f9e5c9;
+        transition: background 0.14s;
+    }
+
+    /* Dugmad u tabeli */
+    .sobe-tabela input[type="submit"],
+    .sobe-tabela button,
+    .sobe-tabela input[type="button"] {
+        padding: 7px 15px;
+        border-radius: 7px;
+        border: none;
+        font-weight: 600;
+        color: #fff;
+        background: #3e94c7;
+        cursor: pointer;
+        transition: background 0.18s, transform 0.13s;
+        font-size: 0.99em;
+        margin: 0 2px;
+    }
+
+        .sobe-tabela input[type="submit"]:hover,
+        .sobe-tabela button:hover {
+            background: #256082;
+            transform: scale(1.07);
+        }
+
+        .sobe-tabela input[type="submit"][value="Obriši"] {
+            background: #c7362c;
+        }
+
+            .sobe-tabela input[type="submit"][value="Obriši"]:hover {
+                background: #941c13;
+            }

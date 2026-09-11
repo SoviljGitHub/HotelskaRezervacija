@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.rsuser
+
+# Build folders
+[Bb]in/
+[Oo]bj/
+
+# Test results
+TestResults/
+
+# NuGet
+packages/
+
+# Logs
+*.log

@@ -1,0 +1,126 @@
+﻿
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    /* Pozadina */
+    background-image: url('Slike/recepcija.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* ovde je validna vrednost „cover” */
+}
+
+
+/* ====== NAVIGACIJA ====== */
+.navigacija {
+    display: flex;
+    align-items: center;
+    background-color: rgba(31,31,31,0.95);
+    padding: 10px 30px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin-bottom: 30px;
+   
+}
+
+    .navigacija > .logo {
+        
+    }
+
+    .navigacija > .meni-centar {
+        flex: 1; 
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navigacija > .odjava-btn {
+        margin-left: 20px;
+    }
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #d38742;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.05em;
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.11);
+}
+
+    .nav-btn:hover,
+    .nav-btn:focus {
+        background-color: #a85f23;
+        transform: translateY(-2px) scale(1.03);
+        color: #fff;
+    }
+
+    .nav-btn img {
+        height: 20px;
+        width: 20px;
+    }
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    vertical-align: middle;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+}
+
+.odjava-btn {
+    background: #bb2b2b;
+    transition: background-color 0.22s, transform 0.18s;
+}
+
+    .odjava-btn:hover,
+    .odjava-btn:focus {
+        background: #7d1818;
+        color: #fff;
+    }
+
+
+/* ====== FOOTER ====== */
+.footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 25px 10px 15px 10px;
+    border-radius: 18px 18px 0 0;
+    margin-top: 50px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.13);
+    font-size: 1.07em;
+}
+
+.footer-logo {
+    height: 38px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.footer-naziv {
+    font-weight: bold;
+    letter-spacing: 1px;
+    vertical-align: middle;
+}
+
+.footer-info {
+    margin-top: 8px;
+    font-size: 0.98em;
+    color: #e7ba8b;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
