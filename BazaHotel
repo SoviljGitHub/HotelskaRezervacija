@@ -1,0 +1,288 @@
+-- Tabela Gost -- 
+CREATE TABLE Gost (
+    JMBG CHAR(13) PRIMARY KEY,
+    Ime NVARCHAR(50) NOT NULL,
+    Prezime NVARCHAR(50) NOT NULL,
+    Pol NVARCHAR(10) NOT NULL,
+    DatumRodjenja DATE NOT NULL,
+    BrojTelefona NVARCHAR(20),
+    Email NVARCHAR(100)
+);
+GO
+
+-- Tabela Soba -- 
+CREATE TABLE Soba (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    BrojSobe NVARCHAR(10) NOT NULL UNIQUE,
+    TipSobe NVARCHAR(30) NOT NULL,
+    Kapacitet INT NOT NULL DEFAULT 1,
+    CenaPoNoci DECIMAL(10,2) NOT NULL
+);
+GO
+
+
+
+-- Tabela Rezervacija -- 
+CREATE TABLE Rezervacija (
+    IdRezervacije INT PRIMARY KEY IDENTITY(1,1),
+    JMBG_Gosta CHAR(13) NOT NULL,
+    BrojSobe NVARCHAR(10) NOT NULL,
+    DatumPrijave DATE NOT NULL,
+    DatumOdjave DATE NOT NULL,
+    Cena DECIMAL(10,2) NOT NULL DEFAULT 0,
+
+    CONSTRAINT FK_Rezervacija_Gost FOREIGN KEY (JMBG_Gosta)
+        REFERENCES Gost(JMBG)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+
+    CONSTRAINT FK_Rezervacija_Soba FOREIGN KEY (BrojSobe)
+        REFERENCES Soba(BrojSobe)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+GO
+
+
+
+
+SQL SKRIPT – KREIRANJE POGLEDA I USKLADIŠTENIH PROCEDURA
+
+POGLEDI
+
+PregledGostiju 
+CREATE VIEW PregledGostiju AS
+SELECT 
+    Ime,
+    Prezime,
+    JMBG,
+    Pol,
+    DatumRodjenja,
+    BrojTelefona,
+    Email
+FROM Gost;
+GO
+
+Sobe_View 
+CREATE VIEW Sobe_View AS
+SELECT 
+    Id,
+    BrojSobe,
+    TipSobe,
+    Kapacitet,
+    CenaPoNoci
+FROM Soba;
+GO
+
+vw_RezervacijeGostiju 
+CREATE VIEW vw_RezervacijeGostiju AS
+SELECT 
+    r.IdRezervacije,
+    r.DatumPrijave,
+    r.DatumOdjave,
+    r.Cena,
+    g.JMBG,
+    g.Ime AS Ime,            
+    g.Prezime AS Prezime,    
+    g.Pol,
+    g.BrojTelefona,
+    g.Email,
+    r.BrojSobe,
+    s.TipSobe,
+    s.Kapacitet,
+    s.CenaPoNoci 
+FROM Rezervacija r
+INNER JOIN Gost g ON r.JMBG_Gosta = g.JMBG
+LEFT JOIN Soba s ON r.BrojSobe = s.BrojSobe;
+
+PROCEDURE
+-- DodajGosta  
+CREATE PROCEDURE DodajGosta
+    @Ime NVARCHAR(50),
+    @Prezime NVARCHAR(50),
+    @JMBG CHAR(13),
+    @Pol NVARCHAR(10),
+    @DatumRodjenja DATE,
+    @BrojTelefona NVARCHAR(20),
+    @Email NVARCHAR(100)
+AS
+BEGIN
+    INSERT INTO Gost (Ime, Prezime, JMBG, Pol, DatumRodjenja, BrojTelefona, Email)
+    VALUES (@Ime, @Prezime, @JMBG, @Pol, @DatumRodjenja, @BrojTelefona, @Email);
+
+    RETURN 0;
+END;
+GO
+
+-- DodajSobu
+CREATE PROCEDURE DodajSobu
+    @BrojSobe NVARCHAR(10),
+    @TipSobe NVARCHAR(30),
+    @Kapacitet INT,
+    @CenaPoNoci DECIMAL(10,2)
+AS
+BEGIN
+    INSERT INTO Soba (BrojSobe, TipSobe, Kapacitet, CenaPoNoci)
+    VALUES (@BrojSobe, @TipSobe, @Kapacitet, @CenaPoNoci);
+
+    RETURN 0;
+END;
+GO
+
+-- DodajRezervaciju
+CREATE PROCEDURE DodajRezervaciju
+    @JMBG_Gosta CHAR(13),
+    @BrojSobe NVARCHAR(10),
+    @DatumPrijave DATE,
+    @DatumOdjave DATE,
+    @Cena DECIMAL(10,2)
+AS
+BEGIN
+    INSERT INTO Rezervacija (JMBG_Gosta, BrojSobe, DatumPrijave, DatumOdjave, Cena)
+    VALUES (@JMBG_Gosta, @BrojSobe, @DatumPrijave, @DatumOdjave, @Cena);
+
+    RETURN 0;
+END;
+GO
+
+-- IzmeniSobu
+CREATE PROCEDURE IzmeniSobu
+    @Id INT,
+    @BrojSobe NVARCHAR(10),
+    @TipSobe NVARCHAR(30),
+    @Kapacitet INT,
+    @CenaPoNoci DECIMAL(10,2)
+AS
+BEGIN
+    UPDATE Soba
+    SET BrojSobe = @BrojSobe,
+        TipSobe = @TipSobe,
+        Kapacitet = @Kapacitet,
+        CenaPoNoci = @CenaPoNoci
+    WHERE Id = @Id;
+
+    RETURN 0;
+END;
+GO
+
+-- ObrisiGosta
+CREATE PROCEDURE ObrisiGosta
+    @JMBG CHAR(13)
+AS
+BEGIN
+    DELETE FROM Gost WHERE JMBG = @JMBG;
+
+    RETURN 0;
+END;
+GO
+
+-- ObrisiSobu
+CREATE PROCEDURE ObrisiSobu
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Soba WHERE Id = @Id;
+
+    RETURN 0;
+END;
+GO
+
+
+-- VratiRezervacijeZaGosta
+CREATE PROCEDURE VratiRezervacijeZaGosta
+    @JMBG_Gosta CHAR(13)
+AS
+BEGIN
+    SELECT *
+    FROM vw_RezervacijeGostiju
+    WHERE JMBG = @JMBG_Gosta;
+
+    RETURN 0;
+END;
+GO
+
+-- VratiSveSobe
+CREATE PROCEDURE VratiSveSobe
+AS
+BEGIN
+    SELECT *
+    FROM Soba;
+
+    RETURN 0;
+END;
+GO
+  -- PostojiBrojSobe
+CREATE OR ALTER PROCEDURE dbo.PostojiBrojSobe
+    @BrojSobe NVARCHAR(20)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT CASE 
+             WHEN EXISTS (SELECT 1 FROM dbo.Soba WHERE BrojSobe = @BrojSobe) 
+             THEN 1 ELSE 0 
+           END AS Postoji;
+END
+GO
+  
+  -- SobaJeZauzeta
+CREATE PROCEDURE dbo.SobaJeZauzeta
+    @BrojSobe NVARCHAR(10),
+    @DatumOd  DATE,
+    @DatumDo  DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM Rezervacija r
+        WHERE r.BrojSobe = @BrojSobe
+          AND NOT (@DatumDo <= r.DatumPrijave OR @DatumOd >= r.DatumOdjave)
+    )
+        SELECT 1;  -- zauzeta
+    ELSE
+        SELECT 0;  -- slobodna
+END
+GO
+
+-- VratiSveGoste
+CREATE PROCEDURE dbo.VratiSveGoste
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SELECT 
+        Ime,
+        Prezime,
+        JMBG,
+        Pol,
+        DatumRodjenja,
+        BrojTelefona AS Telefon, 
+        Email
+    FROM dbo.Gost
+    ORDER BY Prezime, Ime;
+END
+GO
+
+-- PostojiGost
+CREATE PROCEDURE dbo.PostojiGost
+    @JMBG CHAR(13),
+    @Email NVARCHAR(100) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF @Email IS NULL
+    BEGIN
+        SELECT COUNT(*) AS BrojGostiju
+        FROM dbo.Gost
+        WHERE JMBG = @JMBG;
+    END
+    ELSE
+    BEGIN
+        SELECT COUNT(*) AS BrojGostiju
+        FROM dbo.Gost
+        WHERE JMBG = @JMBG AND Email = @Email;
+    END
+END
+GO
